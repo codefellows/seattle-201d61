@@ -3,7 +3,18 @@
 const repl = require('repl');
 
 const students = [
-  
+  "Robert Carter",
+  "Volha Charnysh",
+  "Peng Chen",
+  "Ryan Creamer",
+  "Paul Depew",
+  "Haley Griffin",
+  "Kenneth Harman",
+  "Joe Pennock",
+  "Kent Sheats",
+  "Matthew Stewart",
+  "Joseph Zabaleta",
+  "Peyton Cysewski" 
 ];
 const used = [];
 
