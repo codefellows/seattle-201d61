@@ -8,15 +8,14 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // // Write your code here
-// function sum(a, b) { //eslint-disable-line
-//   var result = (a + b);
-//   var response = ('The sum of ' + a + ' and ' + b + ' is ' + result + ".");
-//   console.log(response);
-//   console.log(result);
-//   var done = [result, response];
-//   console.log(done);
-//   return done;
-// }
+function sum(a, b) { //eslint-disable-line
+  var result = (a + b);
+  var response = ('The sum of ' + a + ' and ' + b + ' is ' + result + '.');
+ 
+  var done = [result, response];
+  
+  return done;
+}
 
 // // Here is the test for sum(); uncomment it to run it
 // testSum(4, 7);
@@ -32,15 +31,15 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-// function multiply(a, b) { //eslint-disable-line
-//     var result = (a * b);
-//     var response = ('The product of ' + a + ' and ' + b + ' is ' + result + '.');
+function multiply(a, b) { //eslint-disable-line
+  var result = (a * b);
+  var response = ('The product of ' + a + ' and ' + b + ' is ' + result + '.');
 
-//     var array = [result, response];
+  var array = [result, response];
 
-//     return array;
+  return array;
 
-// }
+}
 
 // // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
@@ -88,10 +87,11 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-    var added=(testArray[0] + testArray[1] + testArray[2]);
-    var response = (testArray[0] + "," + testArray[1] + "," + testArray[2] + " was passed in as an array of numbers, and " + added + " is their sum.");
-    var array = [added, response];
-    return array;
+  var add1 = sum(testArray[0], testArray[1])[0];
+  var add2 = sum(add1, testArray[2])[0];
+  var response = (testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + add2 + ' is their sum.');
+  var array = [add2, response];
+  return array;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
