@@ -85,7 +85,7 @@ testSumAndMultiply(4,7,5);
 Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 
 "2,3,4 was passed in as an array of numbers, and 9 is their sum."
-
+"2,3,4 was passed in as an array number, and 9 is their sum."
 IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To do addition, use your sum() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
@@ -96,36 +96,46 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 function sumArray(sumArr) { //eslint-disable-line
  
     var accumulativeSum = 0;
-    for (var recursiveSum = 0; recursiveSum < sumArr.length; recursiveSum++)
-        var currentNumber = sumArr[(recursiveSum)];
-        var nextNumber = sumArr[(recursiveSum + 1)];
+    var sumArray = sumArr;
+    for (var recursiveSum = 0; recursiveSum < sumArray.length; recursiveSum++) {
+        var currentNumber = sumArray[recursiveSum];
+        var nextNumber = sumArray[(recursiveSum + 1)];
         if (recursiveSum === 0 ) {
             var accumulativeSum = sum(currentNumber, nextNumber);
+            console.log(accumulativeSum[1]);
             accumulativeSum = accumulativeSum[0];
             recursiveSum++;
+            console.log('if RecursiveSum is: ' + recursiveSum)
         } else {
             accumulativeSum = sum(currentNumber, accumulativeSum);
+            console.log(accumulativeSum[1]);
+            console.log('else RecursiveSum is: ' + recursiveSum)
             accumulativeSum = accumulativeSum[0];
         }
+    }
 
-        var displaySumArrayNumbers = '';
-        for (var displayAdd = 0; displayAdd < testArray.length; displayAdd++) {
-            if (displayAdd === 0) {
-                displaySumArrayNumbers = (displaySumArrayNumbers + testArray[displayAdd]);
-            } else {
-                displaySumArrayNumbers = (displaySumArrayNumbers + ',' + testArray[displayAdd]);
-            // Does not need to compare on (displayAdd < (multipleAnswers.length - 1))
-            }
+    var displaySumArrayNumbers = '';
+    for (var displayAdd = 0; displayAdd < sumArray.length; displayAdd++) {
+        if (displayAdd === 0) {
+            displaySumArrayNumbers = (displaySumArrayNumbers + sumArray[displayAdd]);
+        } else {
+            displaySumArrayNumbers = (displaySumArrayNumbers + ',' + sumArray[displayAdd]);
         }
-        var sumArrayStatement = displaySumArrayNumbers + ' was passed in as an array number, and ' +  + ' is their sum.'
-    
-        }
-        
+    }
+
+    var sumArrayStatement = (displaySumArrayNumbers + ' was passed in as an array of numbers, and ' + accumulativeSum + ' is their sum.');
+    var recursiveSumArray = [accumulativeSum, sumArrayStatement]
+    console.log(recursiveSumArray);
+    return recursiveSumArray;
+}   
+       
+sumArray([2, 3, 4]);
+
   
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
