@@ -94,8 +94,34 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+ 
+    var accumulativeSum = 0;
+    for (var recursiveSum = 0; recursiveSum < sumArr.length; recursiveSum++)
+        var currentNumber = sumArr[(recursiveSum)];
+        var nextNumber = sumArr[(recursiveSum + 1)];
+        if (recursiveSum === 0 ) {
+            var accumulativeSum = sum(currentNumber, nextNumber);
+            accumulativeSum = accumulativeSum[0];
+            recursiveSum++;
+        } else {
+            accumulativeSum = sum(currentNumber, accumulativeSum);
+            accumulativeSum = accumulativeSum[0];
+        }
 
-}
+        var displaySumArrayNumbers = '';
+        for (var displayAdd = 0; displayAdd < testArray.length; displayAdd++) {
+            if (displayAdd === 0) {
+                displaySumArrayNumbers = (displaySumArrayNumbers + testArray[displayAdd]);
+            } else {
+                displaySumArrayNumbers = (displaySumArrayNumbers + ',' + testArray[displayAdd]);
+            // Does not need to compare on (displayAdd < (multipleAnswers.length - 1))
+            }
+        }
+        var sumArrayStatement = displaySumArrayNumbers + ' was passed in as an array number, and ' +  + ' is their sum.'
+    
+        }
+        
+  
 
 // Here is the test for sumArray(); uncomment it to run it
 
