@@ -34,7 +34,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
+    var result = (a * b);
+    var response = ('The product of ' + a + ' and ' + b + ' is ' + result + '.');
 
+    var array = [result, response];
+
+    return array;
+
+}
 }
 
 // Here is the test for multiply(); uncomment it to run it
