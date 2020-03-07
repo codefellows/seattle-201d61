@@ -8,15 +8,15 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // // Write your code here
-// function sum(a, b) { //eslint-disable-line
-//   var result = (a + b);
-//   var response = ('The sum of ' + a + ' and ' + b + ' is ' + result + ".");
-//   console.log(response);
-//   console.log(result);
-//   var done = [result, response];
-//   console.log(done);
-//   return done;
-// }
+function sum(a, b) { //eslint-disable-line
+  var result = (a + b);
+  var response = ('The sum of ' + a + ' and ' + b + ' is ' + result + ".");
+  console.log(response);
+  console.log(result);
+  var done = [result, response];
+  console.log(done);
+  return done;
+}
 
 // // Here is the test for sum(); uncomment it to run it
 // testSum(4, 7);
@@ -32,15 +32,15 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-// function multiply(a, b) { //eslint-disable-line
-//     var result = (a * b);
-//     var response = ('The product of ' + a + ' and ' + b + ' is ' + result + '.');
+function multiply(a, b) { //eslint-disable-line
+    var result = (a * b);
+    var response = ('The product of ' + a + ' and ' + b + ' is ' + result + '.');
 
-//     var array = [result, response];
+    var array = [result, response];
 
-//     return array;
+    return array;
 
-// }
+}
 
 // // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
