@@ -144,7 +144,7 @@ testSumArray(testArray);
 Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 
 "The numbers 2,3,4 have a product of 24."
-
+[24, "numbers 2,3,4 have a product of 24."]
 IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. This function should handle an array containing three elements. However, you may continue to use the + operator for string concatenation.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
@@ -152,10 +152,44 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
 
+    var accumulativeProduct = 0;
+    var productArray = multArr;
+    for (var recursiveProduct = 0; recursiveProduct < productArray.length; recursiveProduct++) {
+        var currentNumber = productArray[recursiveProduct];
+        var nextNumber = productArray[(recursiveProduct + 1)];
+        if (recursiveProduct === 0 ) {
+            var accumulativeProduct = multiply(currentNumber, nextNumber);
+            console.log(accumulativeProduct[1]);
+            accumulativeProduct = accumulativeProduct[0];
+            recursiveProduct++;
+            console.log('if RecursiveProduct is: ' + recursiveProduct)
+        } else {
+            accumulativeProduct = multiply(currentNumber, accumulativeProduct);
+            console.log(accumulativeProduct[1]);
+            console.log('else RecursiveProduct is: ' + recursiveProduct)
+            accumulativeProduct = accumulativeProduct[0];
+        }
+    }
+
+    var displayProductArrayNumbers = '';
+    for (var displayAdd = 0; displayAdd < productArray.length; displayAdd++) {
+        if (displayAdd === 0) {
+            displayProductArrayNumbers = (displayProductArrayNumbers + productArray[displayAdd]);
+        } else {
+            displayProductArrayNumbers = (displayProductArrayNumbers + ',' + productArray[displayAdd]);
+        }
+    }
+
+    var productArrayStatement = ('The numbers ' + displayProductArrayNumbers + ' have a product of ' + accumulativeProduct + '.');
+    var recursiveProductArray = [accumulativeProduct, productArrayStatement]
+    console.log(recursiveProductArray);
+    return recursiveProductArray;
 }
 
+multiplyArray([2, 3, 4]);
+
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
