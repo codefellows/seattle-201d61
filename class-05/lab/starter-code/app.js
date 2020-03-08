@@ -9,13 +9,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-  var total = a + b;
-  var string = "The sum of " + a + " and " + b + " is " + total + ".";
-  return [total, string]
+  var totalSum = a + b;
+  var stringSum = "The sum of " + a + " and " + b + " is " + totalSum + ".";
+  return [totalSum, stringSum]
 }
 
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -29,9 +29,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-  var total= a*b;
-  var string = "The product of " + a + " and " + b + " is " + total + ".";
-  return [total, string]
+  var totalMultiply= a*b;
+  var stringMultiply = "The product of " + a + " and " + b + " is " + totalMultiply + ".";
+  return [totalMultiply, stringMultiply]
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -52,11 +52,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  var sumAb = sum(a,b);
+  var sumAbC = sum(sumAb[0], c);
+  var stringSum2 = a + " and " + b + " and " + c + " sum to " + sumAbC[0] + ".";
 
+  var multiplyAb = multiply(a, b);
+  var multiplyAbC = multiply(multiplyAb[0], c);
+  var stringMultiply2 = "The product of " + a + " and " + b + " and " + c + " is " + multiplyAbC[0] + ".";
+
+  return [sumAbC[0], multiplyAbC[0], stringSum2, stringMultiply2];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
