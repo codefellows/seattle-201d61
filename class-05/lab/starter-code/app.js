@@ -14,7 +14,6 @@ function sum(a, b) { //eslint-disable-line
     var totalArray = [total, sumStatement]
     return totalArray;
 }
-sum(4,7);
 
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
@@ -36,8 +35,6 @@ function multiply(a, b) { //eslint-disable-line
     var productArray = [product, productStatement]
     return productArray;
 }
-
-multiply(5, 9);
 
 // Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);
@@ -73,7 +70,6 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
     var tripleProblemArray = [endSum, endProduct, tripleSumStatement, tripleMultiplyStatement];
     return tripleProblemArray;
 }
-sumAndMultiply(4, 7, 5);
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5);
@@ -128,9 +124,6 @@ function sumArray(sumArr) { //eslint-disable-line
     console.log(recursiveSumArray);
     return recursiveSumArray;
 }   
-       
-sumArray([2, 3, 4]);
-
   
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -186,8 +179,6 @@ function multiplyArray(multArr) { //eslint-disable-line
     return recursiveProductArray;
 }
 
-multiplyArray([2, 3, 4]);
-
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyArray(testArray);
 
@@ -214,9 +205,41 @@ var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 
+    var accumulativeProduct = 0;
+    var productArray = dynamicArray;
+    for (var recursiveProduct = 0; recursiveProduct < productArray.length; recursiveProduct++) {
+        var currentNumber = productArray[recursiveProduct];
+        var nextNumber = productArray[(recursiveProduct + 1)];
+        if (recursiveProduct === 0 ) {
+            var accumulativeProduct = multiply(currentNumber, nextNumber);
+            console.log(accumulativeProduct[1]);
+            accumulativeProduct = accumulativeProduct[0];
+            recursiveProduct++;
+            console.log('if RecursiveProduct is: ' + recursiveProduct)
+        } else {
+            accumulativeProduct = multiply(currentNumber, accumulativeProduct);
+            console.log(accumulativeProduct[1]);
+            console.log('else RecursiveProduct is: ' + recursiveProduct)
+            accumulativeProduct = accumulativeProduct[0];
+        }
+    }
+
+    var displayProductArrayNumbers = '';
+    for (var displayAdd = 0; displayAdd < productArray.length; displayAdd++) {
+        if (displayAdd === 0) {
+            displayProductArrayNumbers = (displayProductArrayNumbers + productArray[displayAdd]);
+        } else {
+            displayProductArrayNumbers = (displayProductArrayNumbers + ',' + productArray[displayAdd]);
+        }
+    }
+
+    var productArrayStatement = ('The numbers ' + displayProductArrayNumbers + ' have a product of ' + accumulativeProduct + '.');
+    var recursiveProductArray = [accumulativeProduct, productArrayStatement]
+    console.log(recursiveProductArray);
+    return recursiveProductArray;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
