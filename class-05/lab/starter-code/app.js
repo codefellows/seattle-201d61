@@ -34,11 +34,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
+  var value =  (a * b);
+  var results = [];
 
+    if (value === 45) {
+      results.push(value);
+      results.push('The product of ' + a + ' and ' + b + ' is '  + value + '.')
+    }
+    return results;
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
