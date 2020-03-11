@@ -40,4 +40,46 @@ alistair.battle(jacob);
 ## Code Review
 
 - Creating Tables from Objects
-- See review folde
+- See review folder
+
+## Wireframe Excersice
+
+- Make sure your content adequately supports your design!
+
+```html
+
+<body>
+
+  <!-- parent element -->
+  <header>
+
+    <!-- Children -->
+    <a>Link1</a>
+    <a>Link1</a>
+    <a>Link1</a>
+  </header>
+</body>
+```
+
+- If we want to style a group of element, it's often helpful to group them in a parent that we can style discretely give styling specifications to.
+
+
+```html
+
+<!-- parent element -->
+  <header>
+
+    <!-- A single Child-->
+    <div id="nav">
+      <!-- Postionable elements that only have to position themselves relative to each other -->
+      <a>Link1</a>
+      <a>Link1</a>
+      <a>Link1</a>
+    </div>
+  </header>
+
+```
+
+## Covid-19
+
+- Temporary closure of campus for incoming complications
