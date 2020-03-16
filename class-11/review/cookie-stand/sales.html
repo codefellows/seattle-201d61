@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Patrick+Hand&family=Yellowtail&display=swap"
+        rel="stylesheet">
+    <script src="js/headcode.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div id="head">
+        <header>
+            <div id="logo">
+                <div id="logoimg">
+                    <img src=img/salmon.png width=300px href="index.html">
+                </div>
+                <div id="logotext">
+                    <h1>
+                        Salmon Cookies
+                    </h1>
+                    <h2>THE WEIRD COOKIES YOU NEVER HAD BEFORE</h2>
+                </div>
+            </div>
+            <div id="icons">
+                <img src="img/fb-icon.png">
+                <img src="img/twit-icon.png">
+                <img src="img/gp-icon.png">
+                <img src="img/insta-icon.png">
+                <img src="img/flic-icon.png">
+                <img src="img/pint-icon.png">
+                <img src="img/rss-icon.png" style="margin-left: 10px;">
+                <img src="img/mail-icon.png">
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li class="nav">
+                        <a href="index.html">About us</a>
+                    </li>
+                    <li class="nav">
+                        <a href=sales.html>Sales</a>
+                    </li>
+                    <li class="nav">
+                        <a href="store.html">Online Order</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div id="border">
+        </div>
+    </div>
+    <div id="main">
+        <section id=table>
+            <h1>This is our starting point. We have the following 5 stores with the known sales info in the table.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>Min / Cust</th>
+                            <th>Max / Cust</th>
+                            <th>Avg Cookie / Sale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Seattle</td>
+                            <td>23</td>
+                            <td>65</td>
+                            <td>6.3</td>
+                        </tr>
+                        <tr>
+                            <td>Tokyo</td>
+                            <td>3</td>
+                            <td>24</td>
+                            <td>1.2</td>
+                        </tr>
+                        <tr>
+                            <td>Dubai</td>
+                            <td>11</td>
+                            <td>38</td>
+                            <td>3.7</td>
+                        </tr>
+                        <tr>
+                            <td>Paris</td>
+                            <td>20</td>
+                            <td>38</td>
+                            <td>2.3</td>
+                        </tr>
+                        <tr>
+                            <td>Lima</td>
+                            <td>2</td>
+                            <td>16</td>
+                            <td>4.6</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </section>
+        <section id="sales">
+            <br>
+            <button id="report2But">Click here to see the sales report</button>
+            <button id="formBut">Click here to add new stores</button>
+            <br>
+            <form id="addStoreForm" style="display: none;">
+                <p style="font-size: 30px;">Please fill out the following form for new store info</p>
+                <label>
+                    Store Location:
+                    <input type="text" name="location"></input>
+                    <br>
+                </label>
+                <label>
+                    The minimum number of customers per hour:
+                    <input type="text" name="minCust"></input><br>
+                </label>
+                <label>
+                    The maximum number of customers per hour:
+                    <input type="text" name="maxCust"></input><br>
+                </label>
+                <label>
+                    The average number of cookies purchased per customer:
+                    <input type="text" name="avgSale"></input><br>
+                </label>
+                <button type="submit" id="addStoreBut">Click to submit</button>
+
+            </form>
+            <br>
+            <br>
+            <table id="report2" style="display: none;">
+                <thead id="report2Head">
+                    <tr>
+                        <th>Location</th>
+                        <th>6:00am:</th>
+                        <th>7:00am:</th>
+                        <th>8:00am:</th>
+                        <th>9:00am:</th>
+                        <th>10:00am:</th>
+                        <th>11:00am:</th>
+                        <th>12:00am:</th>
+                        <th>1:00pm:</th>
+                        <th>2:00pm:</th>
+                        <th>3:00pm:</th>
+                        <th>4:00pm:</th>
+                        <th>5:00pm:</th>
+                        <th>6:00pm:</th>
+                        <th>7:00pm:</th>
+                        <th>Daily Total</th>
+                    </tr>
+                </thead>
+                <tbody id=report2Body>
+
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <div id=foot>
+        <footer>
+            <div id="border">
+            </div>
+            <section id="info">
+                <h3>Contact Us:</h3>
+                <p>Address: 2901 3rd Ave, Seattle WA 98XXX</p>
+                <p>Email: info@salmoncookies.com</p>
+                <h4>Salmon Cookies</h4>
+                <p id="rights">&copy; 2020 &middot; All Rights Reserved.</p>
+            </section>
+            <section id="map">
+                <iframe width="300" height="300"
+                    src="https://maps.google.com/maps?width=300&amp;height=300&amp;hl=en&amp;q=Address%3A%202901%203rd%20Ave%2C%20Seattle%2C%20WA%2098121+(The%20Flower%20Shop)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0">&lt;a
+                    href="https://www.maps.ie/coordinates.html"&gt;find my coordinates&lt;/a&gt;</iframe>
+            </section>
+        </footer>
+    </div>
+    <script src="js/app.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+
+</body>
+
+</html>
