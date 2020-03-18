@@ -3,7 +3,7 @@
 PATHNUM=$(echo $0 | awk '{print gsub(/\..\//, "")}') 
 DIRPATH='' 
 
-if [ $PATHNUM > 0 ];
+if [ $PATHNUM -gt 0 ];
 then
   for ((i=0; i<$PATHNUM; i++));
   do
