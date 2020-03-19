@@ -1,0 +1,119 @@
+/* Body */
+
+body {
+  width: 100%;
+}
+
+/* Header */
+
+#header {
+  background-color: rgba(0, 38, 255, 1);
+}
+
+#header img {
+  width: 20%;
+}
+
+#header h1 {
+  display: inline-block;
+}
+
+/* Main */
+
+#main {
+  display: flex;
+}
+
+#results {
+  display: inline-block;
+  width: 25%;
+  background-color: rgba(21, 255, 0, 1);
+}
+
+#temp {
+  /* display: block; */
+}
+
+#results div {
+  padding: 10px;
+}
+
+#inner {
+  display: inline-block;
+  width: 75%;
+  background-color: rgba(255, 60, 0, 1);
+}
+
+#chartOptions {
+  background-color: lightgray;
+  display: flex;
+  margin: 0 20px 20px 20px;
+}
+
+#chartOptions div {
+  width: 25%;
+  height: 75px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 75px;
+}
+
+#chartOptions div:hover {
+  color: white;
+  background-color: black;
+}
+
+#imgBar {
+  display: flex;
+}
+
+#imgBar div {
+  display: inline-block;
+  width: 33.33333%;
+  height: 250px;
+  margin: 20px;
+  background-color: rgba(251, 255, 0, 1);
+}
+
+#imgBar div:nth-child(2) {
+  margin: 20px 0;
+}
+
+#imgBar div img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+
+#chartContainer {
+  background-color: white;
+  margin: 0 20px;
+  /* display: none; */
+}
+
+canvas {
+  width: 100%;
+  height: 300px;
+}
+
+
+
+
+#info {
+  margin-top: 25px;
+}
+
+#info div {
+  padding: 10px;
+}
+
+/* Footer */
+
+#footer {
+  padding-top: 25px;
+  background-color: rgba(225, 0, 255, 1);
+}
+ test {
+   color: rgba(225, 0, 255, 0.2);
+ }

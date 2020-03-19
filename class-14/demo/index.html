@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>class 14</title>
+  <style>
+    div {
+      height: 100px;
+      width: 100px;
+      background-color: black;
+      margin: 5px;
+      transition: 0.5s;
+      color: white;
+      position: relative;
+    }
+
+    #shrink:hover {
+      height: 50px;
+      background-color: red;
+    }
+
+    #rotate:hover {
+      padding: 200px;
+      width: 200px;
+      transform: rotate(90deg) translateX(50px) translateY(-50px);
+      transition-duration: 1s;
+      transition-timing-function: ease-in-out;
+    }
+
+    #shake:hover {
+      animation-name: shake;
+      animation-duration: 1s;
+      animation-iteration-count: 1;
+      animation-timing-function: linear;
+    }
+
+    .stretchY {
+      animation-name: stretchY;
+      animation-duration: 1s;
+    }
+
+    @keyframes stretchY {
+      0% {
+        height: 100px;
+        width: 100px;
+      }
+
+      50% {
+        width: 125px;
+      }
+
+      100% {
+        height: 200px;
+        width: 200px;
+      }
+    }
+
+    @keyframes stretchX {
+      0% {
+        width: 100px;
+      }
+
+      100% {
+        width: 200px;
+      }
+    }
+
+    @keyframes shake {
+      0% {
+        left: 0;
+      }
+
+      25% {
+        left: 50px;
+      }
+
+      50% {
+        left: 0;
+      }
+
+      75% {
+        left: -50px;
+      }
+
+      100% {
+        left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="shrink"></div>
+  <div id="rotate">Text</div>
+  <div class="stretchY stretchX"></div>
+  <form>
+    <select id="select">
+      <option value="option1">Option1</option>
+      <option value="option2">Option2</option>
+    </select>
+  </form>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
