@@ -9,11 +9,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-
+    var additionAnswer = a + b;
+    var additionString = "The sum of " + a + " and " + b + " is " + additionAnswer + "."
+    var additionArray = [additionAnswer, additionString];
+    return additionArray;
 }
 
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -27,11 +30,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+    var answerProduct = a * b;
+    var productString = "The product of " + a + " and " + b + " is " + answerProduct + ".";
+    var productArray = [answerProduct, productString];
+    return productArray;
 }
 
+
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -48,11 +55,20 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+    var firstNumbersAdded = sum(a, b);
+    var totalNumbersAdded = sum(firstNumbersAdded[0], c);
+    totalNumbersAdded[1] = a + " and " + b + " and " + c + " sum to " + totalNumbersAdded[0] + ".";
+    var firstNumbersMultiplied = multiply(a, b);
+    var totalNumbersMultiplied = multiply(firstNumbersMultiplied[0], c);
+    totalNumbersMultiplied[1] = "The product of " + a + " and " + b + " and " + c + " is " + totalNumbersMultiplied[0] + ".";
+    var addAndMultiplyArray = [totalNumbersAdded[0], totalNumbersMultiplied[0], totalNumbersAdded[1], totalNumbersMultiplied[1]];
+    console.log(addAndMultiplyArray);
+    return addAndMultiplyArray;
+    
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -70,12 +86,18 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+    var firstNumbersAddedUp = sum(2, 3);
+    var allNumbersAdded = sum(firstNumbersAddedUp[0], 4); 
+    sumArr = allNumbersAdded[0];
+    console.log(sumArr);
+    var arrayString = testArray + " was passed in as an array of numbers, and " + allNumbersAdded[0] + " is their sum."
+    var answerToQuestion4 = [sumArr, arrayString];
+    return answerToQuestion4;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -91,11 +113,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+    var testArrayMultiply = [2, 3, 4];
+    var firstNumbersMultipliedUp = multiply(2, 3);
+    var totalNumbersMultiplied = multiply(firstNumbersMultipliedUp[0], 4);
+    multArr = totalNumbersMultiplied[0];
+    var arrayMultString = "The numbers " + testArrayMultiply + " have a product of " + totalNumbersMultiplied[0] + "."
+    var answerToQuestion5 = [multArr, arrayMultString];
+    return answerToQuestion5;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
