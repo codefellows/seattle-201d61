@@ -57,12 +57,9 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) { //eslint-disable-line
     var firstNumbersAdded = sum(a, b);
     var totalNumbersAdded = sum(firstNumbersAdded[0], c);
-    // console.log(totalNumbersAdded);
     totalNumbersAdded[1] = a + " and " + b + " and " + c + " sum to " + totalNumbersAdded[0] + ".";
-    // console.log(addNumbersString);
     var firstNumbersMultiplied = multiply(a, b);
     var totalNumbersMultiplied = multiply(firstNumbersMultiplied[0], c);
-    // console.log(totalNumbersMultiplied);
     totalNumbersMultiplied[1] = "The product of " + a + " and " + b + " and " + c + " is " + totalNumbersMultiplied[0] + ".";
     var addAndMultiplyArray = [totalNumbersAdded[0], totalNumbersMultiplied[0], totalNumbersAdded[1], totalNumbersMultiplied[1]];
     console.log(addAndMultiplyArray);
@@ -89,12 +86,20 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+    var firstNumbersAddedUp = sum(2, 3);
+    var allNumbersAdded = sum(firstNumbersAddedUp[0], 4); 
+    // console.log(allNumbersAdded);
+    sumArr = allNumbersAdded[0];
+    console.log(sumArr);
+    var arrayString = testArray + " was passed in as an array of numbers, and " + allNumbersAdded[0] + " is their sum."
+    var answerToQuestion4 = [allNumbersAdded[0], arrayString];
+    // console.log(answerToQuestion4);
+    return answerToQuestion4;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
