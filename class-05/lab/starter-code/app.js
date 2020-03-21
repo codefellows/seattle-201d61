@@ -55,13 +55,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    var addNumbersArray = sum(a, b, c);
-    
-    var multiplyNumbersArray = multiply(a, b, c);
-    var addNumbersString = a + " and " + b + " and " + c + " sum to " + addNumbers + ".";
-    var multiplyNumbersString = "The product of " + a + " and " + b + " and " + c + " is " + multiplyNumbers + ".";
-    var addAndMultiplyArray = [addNumbers, multiplyNumbers, addNumbersString, multiplyNumbersString];
+    var firstNumbersAdded = sum(a, b);
+    var totalNumbersAdded = sum(firstNumbersAdded[0], c);
+    // console.log(totalNumbersAdded);
+    totalNumbersAdded[1] = a + " and " + b + " and " + c + " sum to " + totalNumbersAdded[0] + ".";
+    // console.log(addNumbersString);
+    var firstNumbersMultiplied = multiply(a, b);
+    var totalNumbersMultiplied = multiply(firstNumbersMultiplied[0], c);
+    // console.log(totalNumbersMultiplied);
+    totalNumbersMultiplied[1] = "The product of " + a + " and " + b + " and " + c + " is " + totalNumbersMultiplied[0] + ".";
+    var addAndMultiplyArray = [totalNumbersAdded[0], totalNumbersMultiplied[0], totalNumbersAdded[1], totalNumbersMultiplied[1]];
+    console.log(addAndMultiplyArray);
     return addAndMultiplyArray;
+    
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
