@@ -9,9 +9,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-    var answer = a + b;
-    var additionString = "The sum of " + a + " and " + 7 + " is " + 11 + "."
-    var additionArray = [answer, additionString];
+    var additionAnswer = a + b;
+    var additionString = "The sum of " + a + " and " + b + " is " + additionAnswer + "."
+    var additionArray = [additionAnswer, additionString];
     return additionArray;
 }
 
@@ -30,11 +30,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+    var answerProduct = a * b;
+    var productString = "The product of " + a + " and " + b + " is " + answerProduct + ".";
+    var productArray = [answerProduct, productString];
+    return productArray;
 }
 
+
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -51,11 +55,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+    var addNumbersArray = sum(a, b, c);
+    
+    var multiplyNumbersArray = multiply(a, b, c);
+    var addNumbersString = a + " and " + b + " and " + c + " sum to " + addNumbers + ".";
+    var multiplyNumbersString = "The product of " + a + " and " + b + " and " + c + " is " + multiplyNumbers + ".";
+    var addAndMultiplyArray = [addNumbers, multiplyNumbers, addNumbersString, multiplyNumbersString];
+    return addAndMultiplyArray;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
