@@ -9,11 +9,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-
+  var totalSum = a + b;
+  var stringSum = "The sum of " + a + " and " + b + " is " + totalSum + ".";
+  return [totalSum, stringSum]
 }
 
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -27,11 +29,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+  var totalMultiply= a*b;
+  var stringMultiply = "The product of " + a + " and " + b + " is " + totalMultiply + ".";
+  return [totalMultiply, stringMultiply]
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -48,11 +52,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  var sumAb = sum(a,b);
+  var sumAbC = sum(sumAb[0], c);
+  var stringSum2 = a + " and " + b + " and " + c + " sum to " + sumAbC[0] + ".";
 
+  var multiplyAb = multiply(a, b);
+  var multiplyAbC = multiply(multiplyAb[0], c);
+  var stringMultiply2 = "The product of " + a + " and " + b + " and " + c + " is " + multiplyAbC[0] + ".";
+
+  return [sumAbC[0], multiplyAbC[0], stringSum2, stringMultiply2];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -70,12 +82,29 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+  
+  var total = 0;
+  var arrString = '';
 
+  for (var i = 0; i < sumArr.length; i++) {
+    total = sum(total, sumArr[i]);
+    total = total[0];
+  
+    if (i != sumArr.length - 1) {
+      arrString = arrString + sumArr[i] + ',';
+    } else {
+      arrString = arrString + sumArr[i]
+    }
+  }
+
+  arrString += ' was passed in as an array of numbers, and ' + total + ' is their sum.'
+
+  return [total, arrString];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -91,11 +120,27 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+ 
+  var total = 1;
+  var arrString = '';
 
+  for (var i = 0; i < multArr.length; i++) {
+    total = multiply(total, multArr[i]);
+    total = total[0];
+    
+    if (i != multArr.length - 1) {
+      arrString = arrString + multArr[i] + ',';
+    } else {
+      arrString = arrString + multArr[i]
+    }
+  }
+
+  var finalString = 'The numbers ' + arrString + ' have a product of ' + total + '.' 
+  return [total, finalString];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -120,9 +165,26 @@ var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 
+  var total = 1;
+  var arrString = '';
+
+  for (var i = 0; i < dynamicArray.length; i++) {
+    total = multiply(total, dynamicArray[i]);
+    total = total[0];
+    
+    if (i != dynamicArray.length - 1) {
+      arrString = arrString + dynamicArray[i] + ',';
+    } else {
+      arrString = arrString + dynamicArray[i]
+    }
+  }
+
+  var finalString = 'The numbers ' + arrString + ' have a product of ' + total + '.' 
+  return [total, finalString];
+
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
